@@ -39,10 +39,7 @@ const Post = ({ username, date, people, image, nav }) => {
       <View className="flex-row justify-between px-2 border-t space-x-2 border-gray-300 items-center">
         <Text className="pt-3 ">{people} Vistor</Text>
 
-        <TouchableOpacity
-          className="pt-3 "
-          onPress={() => nav.navigate("sign_in")}
-        >
+        <TouchableOpacity className="pt-3 ">
           <View className="bg-blue-700 py-2 px-4 rounded-full">
             <Text className="text-white">Discuss</Text>
           </View>

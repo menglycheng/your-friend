@@ -1,7 +1,6 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../screens/HomeScreen";
 import {
   DocumentTextIcon,
   HomeIcon,
@@ -14,12 +13,19 @@ import {
   DocumentTextIcon as DocumentTextIconFocus,
   UserCircleIcon as UserCircleIconFocus,
 } from "react-native-heroicons/solid";
-import Profile from "../screens/Profile";
-import Search from "../screens/Search";
-import YourPost from "../screens/YourPost";
 import AuthStackNavigator from "./AuthStackNavigator";
+import { createStackNavigator } from "@react-navigation/stack";
+
+import {
+  HomeStackScreen,
+  SearchStackScreen,
+  YourPostStackScreen,
+  ProfileStackScreen,
+} from "./StackNavigation";
+import { NavigationContainer } from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();
+
 const BottomTabNavigator = () => {
   return (
     <Tab.Navigator
@@ -30,8 +36,8 @@ const BottomTabNavigator = () => {
       }}
     >
       <Tab.Screen
-        name={"Home"}
-        component={HomeScreen}
+        name={"home"}
+        component={HomeStackScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View>
@@ -43,7 +49,7 @@ const BottomTabNavigator = () => {
       {/* Search Page */}
       <Tab.Screen
         name={"search"}
-        component={Search}
+        component={SearchStackScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View>
@@ -59,7 +65,7 @@ const BottomTabNavigator = () => {
       {/* Your Post Page  */}
       <Tab.Screen
         name={"your_post"}
-        component={YourPost}
+        component={YourPostStackScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View>
@@ -75,7 +81,7 @@ const BottomTabNavigator = () => {
       {/* Profile Page  */}
       <Tab.Screen
         name={"profile"}
-        component={Profile}
+        component={ProfileStackScreen}
         options={{
           tabBarIcon: ({ focused }) => (
             <View>
