@@ -1,12 +1,19 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, SafeAreaView } from "react-native";
+import React, { useLayoutEffect } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const SignUp = () => {
+  const navigations = useNavigation();
+  useLayoutEffect(() => {
+    navigations.setOptions({
+      headerShown: false,
+    });
+  }, []);
   return (
-    <View>
+    <SafeAreaView>
       <Text>SignUp</Text>
-    </View>
-  )
-}
+    </SafeAreaView>
+  );
+};
 
-export default SignUp
+export default SignUp;

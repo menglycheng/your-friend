@@ -4,15 +4,18 @@ import React from "react";
 import SignIn from "../screens/SignIn";
 import { createStackNavigator } from "@react-navigation/stack";
 import SignUp from "../screens/SignUp";
+import ForgotPassword from "../screens/ForgotPassword";
 
-const Stack = createStackNavigator();
+const AuthStack = createStackNavigator();
 
-const AuthStackNavigator = () => {
+const AuthStackScreen = ({ navigation }) => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="SignIn" component={SignIn} />
-    </Stack.Navigator>
+    <AuthStack.Navigator>
+      <AuthStack.Screen name="SignIn" component={SignIn} />
+      <AuthStack.Screen name="signin" component={SignUp} />
+      <AuthStack.Screen name="ForgotPassword" component={ForgotPassword} />
+    </AuthStack.Navigator>
   );
 };
 
-export default AuthStackNavigator;
+export default AuthStackScreen;

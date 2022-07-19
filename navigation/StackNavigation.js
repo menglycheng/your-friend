@@ -6,7 +6,6 @@ import HomeScreen from "../screens/HomeScreen";
 import Profile from "../screens/Profile";
 import Search from "../screens/Search";
 import YourPost from "../screens/YourPost";
-import Test from "../screens/Test";
 
 const HomeStack = createStackNavigator();
 const SearchStack = createStackNavigator();
@@ -17,7 +16,6 @@ const HomeStackScreen = () => {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name="home" component={HomeScreen} />
-      <HomeStack.Screen name="test" component={Test} />
     </HomeStack.Navigator>
   );
 };
